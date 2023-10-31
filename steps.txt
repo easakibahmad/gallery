@@ -33,3 +33,6 @@
 
 
 6. router setup (only home route setup here)
+
+
+7. github first commit
