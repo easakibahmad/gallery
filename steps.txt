@@ -1,0 +1,35 @@
+1. create project with vite -> 
+    npm create vite@latest gallery -- --template react
+
+
+2. install react router dom -> 
+    npm install react-router-dom localforage match-sorter sort-by
+
+
+3. install tailwind css -> 
+    npm install -D tailwindcss postcss autoprefixer
+    npx tailwindcss init -p
+
+    (add below paths to tailwind.config.js file)
+    content: [
+        "./index.html",
+        "./src/**/*.{js,ts,jsx,tsx}",
+    ],
+
+    (add below directives to index.css file)
+    @tailwind base;
+    @tailwind components;
+    @tailwind utilities;
+
+
+4. install daisyui as a tailwind css plugin
+    npm i -D daisyui@latest
+
+    (add daisyUI to your tailwind.config.js file)
+    plugins: [require("daisyui")],
+
+
+5. favicon added
+
+
+6. router setup (only home route setup here)
