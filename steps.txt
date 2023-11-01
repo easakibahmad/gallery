@@ -36,3 +36,6 @@
 
 
 7. github first commit
+
+
+8. home page implementation
