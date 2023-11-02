@@ -13,6 +13,7 @@ import img11 from "../../assets/images/image-11.jpeg";
 
 import "../Home/Home.css";
 import ImageComponent from "../../Components/ImageComponent";
+import TickComponent from "../../Components/TickComponent";
 
 const Home = () => {
   //  initial state for each images in images array
@@ -89,19 +90,21 @@ const Home = () => {
   };
 
   return (
-    <div className="grid grid-cols-1 m-4 rounded-md ">
-      <div className="flex items-center justify-between px-10 py-6">
+    <div className="grid grid-cols-1 rounded-2xl bg-white">
+      <div className="flex items-center justify-between px-16 py-6">
         {/* if image is selected, then gallery word will be hidden. */}
         <div>
           {selectedImages.length > 0 ? (
             selectedImages.length == 1 ? (
-              <div>
+              <div className="flex gap-2 items-center">
+                <TickComponent className="text-sm"></TickComponent>
                 <span className="pt-0 text-xl font-bold">
                   {selectedImages.length} File Selected
                 </span>
               </div>
             ) : (
-              <div>
+              <div className="flex gap-2 items-center">
+                <TickComponent className="text-sm"></TickComponent>
                 <span className="pt-0 text-xl font-bold">
                   {selectedImages.length} Files Selected
                 </span>
@@ -121,7 +124,7 @@ const Home = () => {
           )}
         </div>
       </div>
-      <div className="grid lg:grid-cols-5 md:grid-cols-4 col-span-2 gap-8 w-full py-10 px-14">
+      <div className="grid lg:grid-cols-5 md:grid-cols-4 col-span-2 gap-8 w-full py-6 px-14">
         {/* here we have to create grid layout and first item col-span is 2 and row span also 2 in large devices, thats why write conditionally to show the images  */}
         {images.map((image, index) =>
           image == images[0] ? (

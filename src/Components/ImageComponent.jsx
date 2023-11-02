@@ -1,4 +1,5 @@
 import React from "react";
+import TickComponent from "./TickComponent";
 
 const ImageComponent = ({
   index,
@@ -27,9 +28,7 @@ const ImageComponent = ({
       <img className="h-full w-full" src={image} alt="" />
 
       {selectedImages.includes(index) && (
-        <div className="absolute top-4 left-4 bg-green-500 text-white selected-tick p-1">
-          <span className="text-xl relative">✔</span>
-        </div>
+        <TickComponent className="absolute text-xl top-4 left-4 selected-tick"></TickComponent>
       )}
       {!selectedImages.includes(index) && imageThatHovered === index && (
         <div className="h-9 w-8 bg-white border absolute top-4 left-4"></div>
