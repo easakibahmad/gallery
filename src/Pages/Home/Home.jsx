@@ -34,6 +34,17 @@ const Home = () => {
   // state for deleting single or multiple image at a time
   const [selectedImages, setSelectedImages] = useState([]);
 
+  // for div that will visible when hover, and not selected that image
+  const [imageThatHovered, setImageThatHovered] = useState(null);
+
+  const enterMouse = (index) => {
+    setImageThatHovered(index);
+  };
+
+  const mouseLeave = () => {
+    setImageThatHovered(null);
+  };
+
   // function for drag initialization
   const dragInitialization = (e, index) => {
     e.dataTransfer.setData("prevIndex", index);
@@ -124,18 +135,20 @@ const Home = () => {
                 onDragOver={(e) => dragFinishing(e)}
                 onDrop={(e) => handleDragAndDrop(e, index)}
                 draggable
+                onClick={() => imageSelectionOrNot(index)}
+                onMouseEnter={() => enterMouse(index)}
+                onMouseLeave={mouseLeave}
               >
-                <img
-                  className="h-full w-full"
-                  src={image}
-                  alt=""
-                  onClick={() => imageSelectionOrNot(index)}
-                />
+                <img className="h-full w-full" src={image} alt="" />
                 {selectedImages.includes(index) && (
                   <div className="absolute top-4 left-4 bg-green-500 text-white p-1">
                     <span className="text-xl relative">✔</span>
                   </div>
                 )}
+                {!selectedImages.includes(index) &&
+                  imageThatHovered === index && (
+                    <div className="h-9 w-8 bg-white border absolute top-4 left-4"></div>
+                  )}
               </div>
             </>
           ) : (
@@ -148,20 +161,21 @@ const Home = () => {
                 onDragOver={(e) => dragFinishing(e)}
                 onDrop={(e) => handleDragAndDrop(e, index)}
                 draggable
+                onClick={() => imageSelectionOrNot(index)}
+                onMouseEnter={() => enterMouse(index)}
+                onMouseLeave={mouseLeave}
               >
-                <img
-                  className="h-full w-full"
-                  src={image}
-                  alt=""
-                  onClick={() => imageSelectionOrNot(index)}
-                />
-                <div className="white-overlay"></div>
+                <img className="h-full w-full" src={image} alt="" />
 
                 {selectedImages.includes(index) && (
                   <div className="absolute top-4 left-4 bg-green-500 text-white selected-tick p-1">
                     <span className="text-xl relative">✔</span>
                   </div>
                 )}
+                {!selectedImages.includes(index) &&
+                  imageThatHovered === index && (
+                    <div className="h-9 w-8 bg-white border absolute top-4 left-4"></div>
+                  )}
               </div>
             </>
           )

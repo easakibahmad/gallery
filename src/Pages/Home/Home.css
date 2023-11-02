@@ -1,15 +1,13 @@
-.cursor-pointer:hover .selected-tick {
-    opacity: 1;
-    transition: opacity 0.4s;
-}
-
+/* selection tick sign class  */
 .selected-tick {
-    opacity: 0.8;
+    opacity: 1;
 }
 
+
+/* this class for each image div  */
 .image-div{
     transition: filter 0.7s;
 }
 .image-div:hover{
-    filter: brightness(0.7);
+    filter: brightness(0.5);
 }
