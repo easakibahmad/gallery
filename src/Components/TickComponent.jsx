@@ -4,7 +4,7 @@ const TickComponent = ( { className } ) =>
 {
     return (
       <div
-        className={`bg-green-500 text-white p-1 ${className}`}
+        className={`bg-green-500 text-white rounded p-1 ${className}`}
       >
         <span className="relative">✔</span>
       </div>

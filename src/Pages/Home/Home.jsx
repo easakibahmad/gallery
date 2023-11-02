@@ -91,7 +91,7 @@ const Home = () => {
 
   return (
     <div className="grid grid-cols-1 rounded-2xl bg-white">
-      <div className="flex items-center justify-between px-16 py-6">
+      <div className="flex items-center justify-between px-16 py-6 border-b-2">
         {/* if image is selected, then gallery word will be hidden. */}
         <div>
           {selectedImages.length > 0 ? (
@@ -124,7 +124,7 @@ const Home = () => {
           )}
         </div>
       </div>
-      <div className="grid lg:grid-cols-5 md:grid-cols-4 col-span-2 gap-8 w-full py-6 px-14">
+      <div className="grid lg:grid-cols-5 md:grid-cols-4 col-span-2 gap-8 w-full py-8 px-14">
         {/* here we have to create grid layout and first item col-span is 2 and row span also 2 in large devices, thats why write conditionally to show the images  */}
         {images.map((image, index) =>
           image == images[0] ? (
@@ -137,6 +137,7 @@ const Home = () => {
                 selectedImages={selectedImages}
                 imageThatHovered={imageThatHovered}
                 dragInitialization={(e, index) => dragInitialization(e, index)}
+                dragFinishing={dragFinishing}
                 handleDragAndDrop={(e, currentIndex) =>
                   handleDragAndDrop(e, currentIndex)
                 }
@@ -156,12 +157,14 @@ const Home = () => {
                 selectedImages={selectedImages}
                 imageThatHovered={imageThatHovered}
                 dragInitialization={(e, index) => dragInitialization(e, index)}
+                dragFinishing={dragFinishing}
                 handleDragAndDrop={(e, currentIndex) =>
                   handleDragAndDrop(e, currentIndex)
                 }
                 imageSelectionOrNot={(index) => imageSelectionOrNot(index)}
                 enterMouse={() => enterMouse(index)}
                 mouseLeave={mouseLeave}
+                className=""
               />
             </>
           )

@@ -7,6 +7,7 @@ const ImageComponent = ({
   selectedImages,
   imageThatHovered,
   dragInitialization,
+  dragFinishing,
   handleDragAndDrop,
   imageSelectionOrNot,
   enterMouse,
@@ -28,10 +29,10 @@ const ImageComponent = ({
       <img className="h-full w-full" src={image} alt="" />
 
       {selectedImages.includes(index) && (
-        <TickComponent className="absolute text-xl top-4 left-4 selected-tick"></TickComponent>
+        <TickComponent className="absolute text-sm top-4 left-4 selected-tick"></TickComponent>
       )}
       {!selectedImages.includes(index) && imageThatHovered === index && (
-        <div className="h-9 w-8 bg-white border absolute top-4 left-4"></div>
+        <div className="h-7 w-6 rounded bg-white border absolute top-4 left-4"></div>
       )}
     </div>
   );
