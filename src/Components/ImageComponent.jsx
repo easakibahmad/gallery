@@ -32,7 +32,7 @@ const ImageComponent = ({
         <TickComponent className="absolute text-sm top-4 left-4 selected-tick"></TickComponent>
       )}
       {!selectedImages.includes(index) && imageThatHovered === index && (
-        <div className="h-7 w-6 rounded bg-white border absolute top-4 left-4"></div>
+        <div className="h-7 w-6 rounded bg-white border-black border-2 absolute top-4 left-4"></div>
       )}
     </div>
   );

@@ -15,6 +15,10 @@ import "../Home/Home.css";
 import ImageComponent from "../../Components/ImageComponent";
 import TickComponent from "../../Components/TickComponent";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faImage } from "@fortawesome/free-solid-svg-icons";
+
+
 const Home = () => {
   //  initial state for each images in images array
   const [images, setImages] = useState([
@@ -170,14 +174,19 @@ const Home = () => {
           )
         )}
         {/* this input is for uploading images */}
-        <div className="relative border-2 border-dotted">
+        <div className="relative border-2 border-dotted lg:h-52 rounded-lg">
           <input
             type="file"
             className="w-full hidden cursor-pointer border-2 border-dotted h-full rounded-lg relative"
             accept="image/*"
           />
           <h1 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center">
-            <span>Add Images</span>
+            <div className="grid grid-cols-1 items-center">
+              <span className="mx-auto text-xl font-bold mb-2">
+                <FontAwesomeIcon icon={faImage} />
+              </span>
+              <span>Add Images</span>
+            </div>
           </h1>
         </div>
       </div>
