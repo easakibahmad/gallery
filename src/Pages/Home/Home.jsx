@@ -167,8 +167,15 @@ const Home = () => {
           )
         )}
         {/* this input is for uploading images */}
-        <div className="border-2 border-dotted h-full rounded-lg relative">
-          <input type="file" className="w-full hidden" accept="image/*" />
+        <div className="relative border-2 border-dotted">
+          <input
+            type="file"
+            className="w-full hidden cursor-pointer border-2 border-dotted h-full rounded-lg relative"
+            accept="image/*"
+          />
+          <h1 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center">
+            <span>Add Images</span>
+          </h1>
         </div>
       </div>
     </div>

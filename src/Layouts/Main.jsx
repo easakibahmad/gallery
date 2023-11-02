@@ -3,9 +3,9 @@ import { Outlet } from 'react-router-dom';
 
 const Main = () => {
     return (
-        <div className='bg-blue-500 px-8 py-4'>
-            <Outlet></Outlet>
-        </div>
+      <div className="bg-slate-300 px-8 py-4 h-screen">
+        <Outlet></Outlet>
+      </div>
     );
 };
 
