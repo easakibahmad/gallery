@@ -12,6 +12,7 @@ import img10 from "../../assets/images/image-10.jpeg";
 import img11 from "../../assets/images/image-11.jpeg";
 
 import "../Home/Home.css";
+import ImageComponent from "../../Components/ImageComponent";
 
 const Home = () => {
   //  initial state for each images in images array
@@ -28,8 +29,6 @@ const Home = () => {
     img10,
     img11,
   ]);
-  // const firstImage = images[ 0 ];
-  // const remainingImages = images.slice(1);
 
   // state for deleting single or multiple image at a time
   const [selectedImages, setSelectedImages] = useState([]);
@@ -127,56 +126,40 @@ const Home = () => {
         {images.map((image, index) =>
           image == images[0] ? (
             <>
-              {/* this part is for first image  */}
-              <div
+              {/* this is for first image  with additional tailwind class that passed by props*/}
+              <ImageComponent
                 key={index}
-                className="cursor-pointer image-div col-span-2 lg:row-span-2 md:row-span-2 h-full rounded-lg border-2 border-solid relative"
-                onDragStart={(e) => dragInitialization(e, index)}
-                onDragOver={(e) => dragFinishing(e)}
-                onDrop={(e) => handleDragAndDrop(e, index)}
-                draggable
-                onClick={() => imageSelectionOrNot(index)}
-                onMouseEnter={() => enterMouse(index)}
-                onMouseLeave={mouseLeave}
-              >
-                <img className="h-full w-full" src={image} alt="" />
-                {selectedImages.includes(index) && (
-                  <div className="absolute top-4 left-4 bg-green-500 text-white p-1">
-                    <span className="text-xl relative">✔</span>
-                  </div>
-                )}
-                {!selectedImages.includes(index) &&
-                  imageThatHovered === index && (
-                    <div className="h-9 w-8 bg-white border absolute top-4 left-4"></div>
-                  )}
-              </div>
+                index={index}
+                image={image}
+                selectedImages={selectedImages}
+                imageThatHovered={imageThatHovered}
+                dragInitialization={(e, index) => dragInitialization(e, index)}
+                handleDragAndDrop={(e, currentIndex) =>
+                  handleDragAndDrop(e, currentIndex)
+                }
+                imageSelectionOrNot={(index) => imageSelectionOrNot(index)}
+                enterMouse={() => enterMouse(index)}
+                mouseLeave={mouseLeave}
+                className="col-span-2 lg:row-span-2 md:row-span-2 additional-class"
+              />
             </>
           ) : (
             <>
               {/* this is for remaining images without first one  */}
-              <div
+              <ImageComponent
                 key={index}
-                className="cursor-pointer image-div rounded-lg border-2 border-solid relative"
-                onDragStart={(e) => dragInitialization(e, index)}
-                onDragOver={(e) => dragFinishing(e)}
-                onDrop={(e) => handleDragAndDrop(e, index)}
-                draggable
-                onClick={() => imageSelectionOrNot(index)}
-                onMouseEnter={() => enterMouse(index)}
-                onMouseLeave={mouseLeave}
-              >
-                <img className="h-full w-full" src={image} alt="" />
-
-                {selectedImages.includes(index) && (
-                  <div className="absolute top-4 left-4 bg-green-500 text-white selected-tick p-1">
-                    <span className="text-xl relative">✔</span>
-                  </div>
-                )}
-                {!selectedImages.includes(index) &&
-                  imageThatHovered === index && (
-                    <div className="h-9 w-8 bg-white border absolute top-4 left-4"></div>
-                  )}
-              </div>
+                index={index}
+                image={image}
+                selectedImages={selectedImages}
+                imageThatHovered={imageThatHovered}
+                dragInitialization={(e, index) => dragInitialization(e, index)}
+                handleDragAndDrop={(e, currentIndex) =>
+                  handleDragAndDrop(e, currentIndex)
+                }
+                imageSelectionOrNot={(index) => imageSelectionOrNot(index)}
+                enterMouse={() => enterMouse(index)}
+                mouseLeave={mouseLeave}
+              />
             </>
           )
         )}
