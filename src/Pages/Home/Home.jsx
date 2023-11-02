@@ -123,7 +123,9 @@ const Home = () => {
         <div>
           {selectedImages.length > 0 && (
             <button onClick={deleteImages} className="ml-2 text-red-600">
-              <span className="text-sm font-bold">Delete files</span>
+              <span className="btn btn-xs btn-outline btn-error">
+                Delete files
+              </span>
             </button>
           )}
         </div>
