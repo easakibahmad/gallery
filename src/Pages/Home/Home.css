@@ -1,0 +1,15 @@
+.cursor-pointer:hover .selected-tick {
+    opacity: 1;
+    transition: opacity 0.4s;
+}
+
+.selected-tick {
+    opacity: 0.8;
+}
+
+.image-div{
+    transition: filter 0.7s;
+}
+.image-div:hover{
+    filter: brightness(0.7);
+}
