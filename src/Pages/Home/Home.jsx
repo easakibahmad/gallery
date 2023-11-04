@@ -130,7 +130,7 @@ const Home = () => {
           )}
         </div>
       </div>
-      <div className="grid lg:grid-cols-5 md:grid-cols-4 col-span-2 gap-8 w-full py-8 px-14">
+      <div className="grid lg:grid-cols-5 md:grid-cols-4 items-center col-span-2 gap-8 w-full py-8 px-14">
         {/* here we have to create grid layout and first item col-span is 2 and row span also 2 in large devices, thats why write conditionally to show the images  */}
         {images.map((image, index) =>
           image == images[0] ? (
@@ -176,7 +176,7 @@ const Home = () => {
           )
         )}
         {/* this input is for uploading images */}
-        <div className="relative border-2 border-dotted lg:h-52 rounded-lg">
+        <div className="relative border-2 border-dotted lg:h-52 md:h-40 h-48 rounded-lg">
           <input
             type="file"
             className="w-full hidden cursor-pointer border-2 border-dotted h-full rounded-lg relative"
