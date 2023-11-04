@@ -18,7 +18,6 @@ import TickComponent from "../../Components/TickComponent";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faImage } from "@fortawesome/free-solid-svg-icons";
 
-
 const Home = () => {
   //  initial state for each images in images array
   const [images, setImages] = useState([
@@ -187,7 +186,7 @@ const Home = () => {
               <span className="mx-auto text-xl font-bold mb-2">
                 <FontAwesomeIcon icon={faImage} />
               </span>
-              <span>Add Images</span>
+              <span className="text-xs">Add Images</span>
             </div>
           </h1>
         </div>
